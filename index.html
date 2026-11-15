@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ary" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7fb">
+  <title>قرايتي — فضاء التعلّم ديالك</title>
+  <meta name="description" content="منصة تعليمية كتعاونك تلخص الدروس، تفهم التمارين خطوة بخطوة، وتنظم القراية ديالك.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home" aria-label="قرايتي، الصفحة الرئيسية">
+        <span class="brand-mark">ق</span><span>قرايتي<span class="brand-dot">.</span></span>
+      </a>
+      <p class="side-label">القائمة الرئيسية</p>
+      <nav class="main-nav" aria-label="القائمة الرئيسية">
+        <button class="nav-link active" data-view="home"><span class="nav-icon">⌂</span>الرئيسية</button>
+        <button class="nav-link" data-view="lesson"><span class="nav-icon">▤</span>لخّص درس</button>
+        <button class="nav-link" data-view="exercise"><span class="nav-icon">✎</span>حلّ تمرين</button>
+        <button class="nav-link" data-view="planner"><span class="nav-icon">▦</span>مخطط القراية</button>
+        <button class="nav-link" data-view="library"><span class="nav-icon">▣</span>المحفوظات</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><span class="help-spark">✦</span><strong>كل خطوة كتقرّبك لهدفك!</strong><p>قسم وقتك، وخذ بريكات صغار بين الحصص.</p></div>
+        <button class="profile"><span class="avatar">ط</span><span><strong>الطالب(ة)</strong><small>فضاء التلميذ</small></span><span class="profile-more">···</span></button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="فتح القائمة">☰</button>
+        <div class="breadcrumb">فضاء التعلّم <span>/</span> <b id="pageLabel">الرئيسية</b></div>
+        <div class="top-actions"><span class="today" id="todayDate"></span><button class="icon-button" aria-label="الإشعارات">♧<i></i></button></div>
+      </header>
+
+      <section class="view active" id="view-home">
+        <div class="welcome-row"><div><p class="eyebrow">نهارك مبروك ✨</p><h1>كل نهار فرصة جديدة باش تتعلّم</h1><p class="subheading">وجدنا ليك الأدوات اللي غادي يعاونوك فالقراية. شنو بغيتي دير اليوم؟</p></div><div class="welcome-illustration" aria-hidden="true"><span>✦</span><div class="book">📚</div><i></i></div></div>
+        <div class="stats-grid">
+          <article class="stat-card"><span class="stat-icon purple">▤</span><div><span class="stat-label">الدروس اللي وجدتي</span><strong id="lessonCount">0</strong><small>درس فالمحفوظات</small></div></article>
+          <article class="stat-card"><span class="stat-icon orange">✎</span><div><span class="stat-label">التمارين اللي خدمتي</span><strong id="exerciseCount">0</strong><small>تمرين فالمحفوظات</small></div></article>
+          <article class="stat-card"><span class="stat-icon green">◷</span><div><span class="stat-label">خطة اليوم</span><strong>25 <em>دقيقة</em></strong><small>بداية مزيانة للقراية</small></div></article>
+        </div>
+        <div class="section-heading"><div><p class="eyebrow">الأدوات ديالك</p><h2>منين نبداو؟</h2></div></div>
+        <div class="tool-grid">
+          <button class="tool-card lesson-tool" data-open="lesson"><span class="tool-icon">▤</span><span class="tool-title">لخّص ليا درس</span><span class="tool-desc">دخل نص الدرس وخذ خلاصة مرتبة وأفكار أساسية.</span><span class="tool-link">بدا دابا <b>←</b></span></button>
+          <button class="tool-card exercise-tool" data-open="exercise"><span class="tool-icon">✎</span><span class="tool-title">شرح ليا تمرين</span><span class="tool-desc">نظّم المعطيات وخدم التمرين مرحلة بمرحلة.</span><span class="tool-link">بدا دابا <b>←</b></span></button>
+          <button class="tool-card planner-tool" data-open="planner"><span class="tool-icon">▦</span><span class="tool-title">نظّم وقت القراية</span><span class="tool-desc">كتب المواد والمهام ديالك ودير خطة بسيطة.</span><span class="tool-link">دير خطتك <b>←</b></span></button>
+        </div>
+        <div class="bottom-grid"><section class="panel tip-panel"><div class="panel-title"><span class="tip-icon">💡</span><div><h3>نصيحة ديال اليوم</h3><p>باش تحفظ مزيان، حاول تشرح الدرس بكلامك، بحال إلا كتشرح لصاحبك.</p></div></div></section><section class="panel recent-panel"><div class="panel-head"><h3>آخر ما خدمتي</h3><button class="text-button" data-open="library">شوف الكل</button></div><div id="recentItems" class="empty-state compact">مازال ما حفظتي حتى حاجة. جرّب شي أداة باش تبدا!</div></section></div>
+      </section>
+
+      <section class="view" id="view-lesson">
+        <div class="page-intro"><span class="large-icon purple">▤</span><div><p class="eyebrow">فهم الدرس بطريقة أسهل</p><h1>لخّص ليا درس</h1><p class="subheading">لصق نص الدرس ديالك، ونرتبوه ليك فشكل نقاط وأفكا�� للمراجعة.</p></div></div>
+        <div class="workspace"><div class="panel form-panel"><label for="lessonTitle">عنوان الدرس <span class="optional">(اختياري)</span></label><input id="lessonTitle" class="text-input" maxlength="90" placeholder="مثال: دورة الماء فالطبيعة"><label for="lessonText">نص الدرس</label><textarea id="lessonText" rows="9" placeholder="لصق هنا الدرس ديالك... كلما كان النص واضح، غادي تكون الخلاصة أحسن."></textarea><div class="input-footer"><span id="lessonChars">0 حرف</span><button class="primary-button" id="summarizeButton">رتّب ليا الدرس <span>✦</span></button></div><p class="disclaimer">ملاحظة: هاد النسخة كتخدم فالمتصفح وكتنظم النص بطريقة بسيطة؛ ما كتستعملش ذكاء اصطناعي وما كترسلش المعلومات للسيرفر.</p></div><div class="panel result-panel" id="lessonResult"><div class="result-placeholder"><span>✦</span><h3>الخلاصة غادي تبان هنا</h3><p>دخل نص الدرس وبدا، ومن بعد راجع الأفكار وقارنها مع الدرس الأصلي.</p></div></div></div>
+      </section>
+
+      <section class="view" id="view-exercise">
+        <div class="page-intro"><span class="large-icon orange">✎</span><div><p class="eyebrow">خدم وفهم، ماشي غير تحفظ</p><h1>شرح ليا تمرين</h1><p class="subheading">كتب نص التمرين، ونعاونك ترتب السؤال والمعطيات وخطوات التفكير.</p></div></div>
+        <div class="workspace"><div class="panel form-panel"><label for="exerciseSubject">المادة</label><select id="exerciseSubject" class="text-input"><option>اختار المادة</option><option>الرياضيات</option><option>الفيزياء والكيمياء</option><option>علوم الحياة والأرض</option><option>اللغة العربية</option><option>اللغة الفرنسية</option><option>مادة أخرى</option></select><label for="exerciseText">نص التمرين</label><textarea id="exerciseText" rows="8" placeholder="كتب التمرين هنا، وزيد المعطيات والأسئلة..."></textarea><div class="input-footer"><span id="exerciseChars">0 حرف</span><button class="primary-button orange-button" id="solveButton">ورّيني مراحل الحل <span>→</span></button></div><p class="disclaimer">هاد الأداة كتقترح خطة عامة للفهم، ماشي حلّ آلي صحيح لكل تمرين. تأكد من الحسابات والنتائج مع أستاذك أو كتابك.</p></div><div class="panel result-panel" id="exerciseResult"><div class="result-placeholder orange-placeholder"><span>✎</span><h3>مراحل التمرين غادي يبانوا هنا</h3><p>حاول تحل بوحدك الأول، ومن بعد استعمل الخطوات باش تراجع طريقة التفكير.</p></div></div></div>
+      </section>
+
+      <section class="view" id="view-planner">
+        <div class="page-intro"><span class="large-icon green">▦</span><div><p class="eyebrow">خطوة صغيرة كل نهار</p><h1>مخطط القراية</h1><p class="subheading">كتب المهام اللي بغيتي تكمل، ونظم نهارك على قد الوقت ديالك.</p></div></div>
+        <div class="planner-layout"><form class="panel planner-form" id="taskForm"><h3>زيد مهمة جديدة</h3><label for="taskName">شنو خاصك تقرا؟</label><input id="taskName" class="text-input" maxlength="100" placeholder="مثال: نراجع درس الكسور"><label for="taskSubject">المادة</label><input id="taskSubject" class="text-input" maxlength="40" placeholder="مثال: الرياضيات"><button class="primary-button green-button" type="submit">زيد للخطة <span>＋</span></button></form><section class="panel tasks-panel"><div class="panel-head"><div><p class="eyebrow">خطة اليوم</p><h3>المهام ديالي</h3></div><span class="task-counter" id="taskCounter">0 مهام</span></div><div id="taskList" class="task-list"></div></section></div>
+      </section>
+
+      <section class="view" id="view-library">
+        <div class="page-intro"><span class="large-icon purple">▣</span><div><p class="eyebrow">كلشي مجموع فبلاصة وحدة</p><h1>المحفوظات</h1><p class="subheading">الدروس والتمارين اللي حفظتي فهاد الجهاز.</p></div></div>
+        <section class="panel library-panel"><div class="panel-head"><h3>خدمتي</h3><button class="text-button danger-text" id="clearLibrary">مسح المحفوظات</button></div><div id="libraryItems" class="library-list"></div></section>
+      </section>
+      <footer class="site-footer">قرايتي <span>·</span> منصة تعليمية بسيطة كتعاونك تتعلم بطريقتك.</footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
